@@ -5,24 +5,31 @@ function Homepage() {
     const [Wellness, setWellness] = React.useState([]);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
-    const [page, setPage] = React.useState(1);
-    const [limit, setLimit] = React.useState(3);
+    const [currentPage, setCurrentPage] = React.useState(1);
+    const [totalPage, setTotalPage] = React.useState(1);
+
+    const fetchRetreats = async (page) => {
+        if (page < 1) return;
+        setCurrentPage(page);
+        setLoading(true);
+        try {
+            const data = await fetchAllDetails({ page });
+            setWellness(data);
+            setError(null);
+            setTotalPage(data.length);
+        } catch (err) {
+            setError("Unable to fetch details")
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    }
 
     React.useEffect(() => {
         (async () => {
-            setLoading(true);
-            try {
-                const data = await fetchAllDetails({ page, limit });
-                setWellness(data);
-                setError(null);
-            } catch (err) {
-                setError("Unable to fetch details")
-                console.error(err);
-            } finally {
-                setLoading(false);
-            }
+            await fetchRetreats(currentPage);
         })()
-    }, []);
+    }, [currentPage]);
 
     return (
         <div className="bg-white">
@@ -59,11 +66,13 @@ function Homepage() {
                     ))}
                 </div>
                 <div className="w-full flex justify-center items-center gap-4 my-10">
-                    <button className="bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg">Previous</button>
-                    <button className="bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg">Next</button>
+                    <button className={`bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg ${currentPage === 1 ? "cursor-not-allowed" : ""}`}
+                        onClick={() => { fetchRetreats(currentPage - 1) }} disabled={currentPage === 1 || loading}>Previous</button>
+                    <button className={`bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg ${totalPage < 3 ? "cursor-not-allowed" : ""}`}
+                        onClick={() => { fetchRetreats(currentPage + 1) }} disabled={totalPage < 3 || loading} >Next</button>
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
 
