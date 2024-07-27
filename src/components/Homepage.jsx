@@ -122,7 +122,7 @@ function Homepage() {
                     ))}
                 </div>
                 {
-                    !loading && !error && Wellness.length > 0 && (
+                    Wellness.length > 0 && (
                         <div className="w-full flex justify-center items-center gap-4 my-10">
                             <button className={`bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg ${currentPage === 1 ? "cursor-not-allowed" : ""}`}
                                 onClick={() => { fetchRetreats(currentPage - 1) }} disabled={currentPage === 1 || loading}>Previous</button>
