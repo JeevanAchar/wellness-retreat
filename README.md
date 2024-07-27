@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Wellness Retreat Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a wellness retreat application built with React.js and Tailwind CSS. It allows users to search and filter retreats by date, type, and title.
 
-## Available Scripts
+## Table of Contents
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [API Endpoints](#api-endpoints)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+**Clone the repository**:
+    ```bash
+    git clone https://github.com/JeevanAchar/wellness-retreat.git
+    cd wellness-retreat
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Install frontend dependencies**:
+    ```bash
+    cd client
+    npm install
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running the Application
 
-### `npm test`
+**Start the frontend development server**:
+    ```bash
+    cd ../client
+    npm start
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ Open your browser and navigate to `http://localhost:3000` to see the application running.
 
-### `npm run build`
+## API Endpoints
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `GET /api/v1/retreats`: Fetch all retreats with optional query parameters for pagination, filtering, and searching.
+- `GET /api/v1/retreats/:id`: Fetch a single retreat by ID.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Search by Title**: Search retreats by title.
+- **Filter by Date**: Filter retreats by a specific date.
+- **Filter by Type**: Filter retreats by type (Yoga, Meditation, Detox).
+- **Pagination**: Navigate through different pages of retreats.
+- **Responsive Design**: Works on both desktop and mobile devices.
 
-### `npm run eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**:
+  - React.js
+  - Tailwind CSS
+  - Axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Axios
 
-## Learn More
+- **Update the base URL with original URL**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    
