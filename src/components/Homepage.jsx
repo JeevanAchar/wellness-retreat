@@ -107,7 +107,7 @@ function Homepage() {
                 {!loading && !error && Wellness.length === 0 && (
                     <div className="flex flex-col justify-center items-center">
                         <p className="py-2 text-2xl font-medium">No results found</p>
-                        <button className="bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg" onClick={handleClearSearch}>Clear Search</button>
+                        <button className="bg-[#1b3252] px-6 py-2 font-medium text-white rounded-lg" onClick={handleClearSearch}>Clear Filter</button>
                     </div>)}
                 <div className="flex flex-wrap justify-between items-center">
                     {Wellness.map((data) => (
